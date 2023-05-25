@@ -27,7 +27,13 @@ $produtoDao->delete($produto4);
 $produtoDao->read();
 
 foreach($produtoDao->read() as $produto){
-  echo $produto['nome'] . "<br>" . $produto['descrição'] . "<hr>";
+  echo $produto['nome'] . "<br>" . $produto['descrição'] . "<br>" . "<a href='editar.php?id=" . $produto['id'] . "'>Editar</a>" . " " . "<a href='deletar.php?id=" . $produto['id'] . "'>Deletar</a>" . "<hr>";
 }
-echo "<pre>";
-print_r($produto);
+
+?>
+
+<form action="" method="post">
+  Nome:<input type="text" name="nome" id=""><br>
+  Descrição:<input type="text" name="descricao" id=""><br>
+  <button type="submit" value="atualizar">Adicionar</button>
+</form>

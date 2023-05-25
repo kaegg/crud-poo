@@ -25,7 +25,7 @@ class ProdutoDao
     $stmt->execute();
 
     if($stmt->rowCount() > 0){
-      $res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+      $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $res;
     }
 
@@ -47,7 +47,7 @@ class ProdutoDao
 
     $sql = 'DELETE FROM produtos WHERE id=?';
     $stmt = Conexao::getCon()->prepare($sql);
-    $stmt->bindValue(1,$id->getId());
+    $stmt->bindValue(1, $id->getId());
 
     $stmt->execute();
 
