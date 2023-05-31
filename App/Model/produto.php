@@ -5,7 +5,7 @@ namespace App\Model;
 class Produto
 {
 
-  private $id, $nome, $descricao;
+  private $id, $nome, $descricao, $valor;
   public function getId(){
     return $this->id;
   }
@@ -28,6 +28,14 @@ class Produto
 
   public function setDesc($desc){
     $this->descricao = $desc;
+  }
+
+  public function getValor(){
+    return $this->valor;
+  }
+
+  public function setValor($valor){
+    return $this->valor = $valor;
   }
 
 }
